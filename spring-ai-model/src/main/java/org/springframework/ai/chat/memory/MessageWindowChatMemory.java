@@ -90,12 +90,10 @@ public final class MessageWindowChatMemory implements ChatMemory {
 		List<Message> finalMessages = new ArrayList<>();
 		if (hasNewSystemMessage) {
 			memoryMessages.stream().filter(msg -> !(msg instanceof SystemMessage)).forEach(finalMessages::add);
-			finalMessages.addAll(uniqueNewMessages);
-		}
-		else {
+		} else {
 			finalMessages.addAll(memoryMessages);
-			finalMessages.addAll(uniqueNewMessages);
 		}
+		finalMessages.addAll(uniqueNewMessages);
 
 		if (finalMessages.size() > this.maxMessages) {
 			List<Message> trimmedMessages = new ArrayList<>();
