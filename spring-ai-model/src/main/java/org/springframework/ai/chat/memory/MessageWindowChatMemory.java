@@ -102,8 +102,7 @@ public final class MessageWindowChatMemory implements ChatMemory {
 			for (Message message : finalMessages) {
 				if (message instanceof SystemMessage || removed >= messagesToRemove) {
 					trimmedMessages.add(message);
-				}
-				else {
+				} else {
 					removed++;
 				}
 			}
